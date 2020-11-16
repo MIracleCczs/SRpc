@@ -10,7 +10,23 @@ import java.io.IOException;
  **/
 public interface Serializer {
 
-    <T> byte[] serialize(T paramT) throws IOException;
+    /**
+     * 序列化
+     *
+     * @param obj
+     * @param <T>
+     * @return
+     * @throws IOException
+     */
+    <T> byte[] serialize(T obj) throws IOException;
 
-    <T> T deserialize(byte[] paramArrayOfbyte, Class<T> paramClass);
+    /**
+     * 反序列化
+     *
+     * @param data
+     * @param clazz 目标类
+     * @param <T>
+     * @return
+     */
+    <T> T deserialize(byte[] data, Class<T> clazz);
 }
